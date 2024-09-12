@@ -1,0 +1,16 @@
+[Unit]
+Description=REGION_BOT
+After=network.target
+
+[Service]
+User=Umidjon
+ExecStart=/bin/bash -c 'cd /home/Umidjon/Bot/region_bot/ && python3 app.py'
+WorkingDirectory=/home/Umidjon/Bot/region_bot/
+Restart=always
+RestartSec=1
+StandardOutput=append:/home/Umidjon/Bot/region_bot/service_log.log
+StandardError=append:/home/Umidjon/Bot/region_bot/error_log.log
+
+[Install]
+WantedBy=multi-user.target
+
